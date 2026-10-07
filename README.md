@@ -1,26 +1,3 @@
-# kubernates-fundamentals
-## kubeadm (Self-Hosted)
-```bash
-AWS ap-south-1 — devops-vpc (10.0.0.0/16)
-┌─────────────────────────────────────────────────────┐
-│  Public Subnet (ap-south-1a)                        │
-│  ┌──────────────────────────────────────────────┐   │
-│  │  Master Node (t3.medium, Ubuntu 22.04)       │   │
-│  │  • kube-apiserver   :6443                    │   │
-│  │  • etcd             :2379                    │   │
-│  │  • kube-scheduler                            │   │
-│  │  • kube-controller-manager                   │   │
-│  │  • Calico CNI (podCIDR: 192.168.0.0/16)      │   │
-│  └──────────────────────────────────────────────┘   │
-│                                                     │
-│  Private Subnets (1b / 1c)                          │
-│  ┌──────────────────────┐  ┌──────────────────────┐ │
-│  │  Worker Node 1       │  │  Worker Node 2       │ │
-│  │  t3.medium           │  │  t3.medium           │ │
-│  │  kubelet + containerd│  │  kubelet + containerd│ │
-│  └──────────────────────┘  └──────────────────────┘ │
-└─────────────────────────────────────────────────────┘
-```
 # Kubernetes Production-Grade Learning Guide
 
 A practical, production-oriented Kubernetes learning repository covering **Kubernetes fundamentals, kubeadm cluster setup, workloads, services, HPA, database architecture, external database connectivity, firewall, networking, security, and troubleshooting**.
@@ -55,6 +32,29 @@ This repository is divided into four major guides:
         StatefulSet / PVC          Firewall / NetworkPolicy
         External Database           RBAC / Secrets
         Read Replica                VPC / VPN / Connectivity
+```
+
+## kubeadm (Self-Hosted)
+```bash
+AWS ap-south-1 — devops-vpc (10.0.0.0/16)
+┌─────────────────────────────────────────────────────┐
+│  Public Subnet (ap-south-1a)                        │
+│  ┌──────────────────────────────────────────────┐   │
+│  │  Master Node (t3.medium, Ubuntu 22.04)       │   │
+│  │  • kube-apiserver   :6443                    │   │
+│  │  • etcd             :2379                    │   │
+│  │  • kube-scheduler                            │   │
+│  │  • kube-controller-manager                   │   │
+│  │  • Calico CNI (podCIDR: 192.168.0.0/16)      │   │
+│  └──────────────────────────────────────────────┘   │
+│                                                     │
+│  Private Subnets (1b / 1c)                          │
+│  ┌──────────────────────┐  ┌──────────────────────┐ │
+│  │  Worker Node 1       │  │  Worker Node 2       │ │
+│  │  t3.medium           │  │  t3.medium           │ │
+│  │  kubelet + containerd│  │  kubelet + containerd│ │
+│  └──────────────────────┘  └──────────────────────┘ │
+└─────────────────────────────────────────────────────┘
 ```
 
 ---
